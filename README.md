@@ -16,16 +16,20 @@ tktk Write a short but descriptive summary of the content in this module.
 | ------ |:----------:|:-----:| ------ |
 | [Setup](./setup/README.md)                               | -- | -- | Setting up the development environment  |
 | [Component Hierarchy and Layout](./component-hierarchy-and-layout/README.md)                         | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-01/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-02/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-03/README.md) | -- | -- | tktk skills covered                     |
-| **Total content**                                        | -- | -- |                                         |
+| [Building the Shop Component](./building-the-shop-component/README.md) | -- | -- | tktk skills covered                     |
+| [Passing Props](./passing-props/README.md) | -- | -- | tktk skills covered                     |
+| [Adding State to the Shop Component](./adding-state-to-the-shop-component/README.md) | -- | -- | tktk skills covered                     |
+| [Handling Click Events](./handling-click-events/README.md) | -- | -- | tktk skills covered                     |
+| [Reusing the InventoryList Component](./reusing-the-inventorylist-component/README.md) | -- | -- | tktk skills covered                     |
+| [Updating Arrays in State](./updating-arrays-in-state/README.md) | -- | -- | tktk skills covered                     |
+|
+ **Total content**                                        | -- | -- |                                         |
 
 ## Level Up content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [tktk Microlesson Name](./tktk-microlesson-04/README.md) | -- | -- | tktk skills covered                     |
+| [UI Improvements](./ui-improvements/README.md) | -- | -- | tktk skills covered                     |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References
