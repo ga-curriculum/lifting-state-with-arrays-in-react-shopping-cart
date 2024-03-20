@@ -1,6 +1,6 @@
 # ![React Shopping Cart - Building the Shop Component](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to create a React component and map over data.     
 
 ## Building the Shop Component
 

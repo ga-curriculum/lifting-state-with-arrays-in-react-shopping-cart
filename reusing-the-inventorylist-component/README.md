@@ -1,6 +1,6 @@
 # ![React Shopping Cart - Reusing the InventoryList Components](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to work with reuseable components in React.
 
 ## Reusable Component
 

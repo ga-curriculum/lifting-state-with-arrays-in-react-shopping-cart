@@ -1,6 +1,6 @@
 # ![React Shopping Cart - Component Hierarchy and Layout](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to plan out component hierarchy for a React App.
 
 [tktk Hunter please replicate the comp hierarchy chart form notion but without the rest of DnD api]
 

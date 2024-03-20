@@ -1,6 +1,6 @@
 # ![React Shopping Cart - Passing Props](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to pass props from a parent component to a child component.
 
 ## Props Refresher
 

@@ -1,6 +1,6 @@
 # ![React Shopping Cart - Adding State to the Shop Component](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to import data and use it as the initial value of a state variable.
 
 ## A Refresher on State
 
