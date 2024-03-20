@@ -14,7 +14,7 @@ import './InventoryList.css'
 
 const InventoryList = (props) => {
   return (
-    <div>
+    <div classname="inventory-list">
       <h2>{props.title}</h2>
 			<ul>
         {props.inventory.length 
@@ -22,7 +22,7 @@ const InventoryList = (props) => {
             props.inventory.map((item)=> (
               <li key={item._id}>
                 <p>{item.name}</p>
-                <p>Cost: {item.cost}</p>
+                <p>Price: {item.price}</p>
                 {props.handleAddItem
                   ? <button onClick={()=> props.handleAddItem(item)}>
                       Add Item

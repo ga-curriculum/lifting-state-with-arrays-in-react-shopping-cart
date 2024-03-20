@@ -10,7 +10,7 @@ Check out the React docs on [Updating Arrays in State](https://react.dev/learn/u
 
 ### Adding to an array
 
-In our app, users will have the ability to select items from the shop’s inventory, and add those items to their own inventory. When an item is added to the user’s inventory, it should be removed from the shop’s inventory.
+In our app, users will have the ability to select items from the shop’s inventory, and add those items to their own inventory. When an item is added to the user’s "cart", it should be removed from the shop’s inventory.
 
 Add the following to `Shop.jsx`: 
 
@@ -29,7 +29,7 @@ Let’s breakdown what is going on in the function above.
 - Notice the use of the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). When we `setUserInventory` state to a new array, we use the spread syntax to copy the contents of the existing `userInventory` array. The new array set to state includes in the existing contents, along with the new `item` added to the end of the array.
 - Notice the use of the [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method here. Remember, the `filter` method returns a shallow copy of the filtered array. When we `setShopInventory`, the array being stored in state will include all of the `item` objects whose `_id` does not match the `_id` of the selected `item`.
 
-Pass the function down to the `InventoryList` component that has a title of “Shop Inventory”.
+Pass the function down to the `InventoryList` component that has a title of “Shop Inventory”:
 
 ```jsx
 // src/components/Shop/Shop.jsx
@@ -57,14 +57,14 @@ We’ll be able to identify which `button` the component instance should display
 
 Take a look at the `ternary` below. 
 
-What is this accomplishing? If the `handleAddItem` function has been passed down to this component instance, it should display the **Add Item** button. Otherwise, it should display the **Remove Item** button.
-
 ```jsx
 {props.handleAddItem
 	? <button>Add Item</button>
   : <button>Remove Item</button>
 }
 ```
+
+What is this accomplishing? If the `handleAddItem` function has been passed down to this component instance, it should display the **Add Item** button. Otherwise, it should display the **Remove Item** button.
 
 Add the ternary to `InventoryList.jsx`. 
 
@@ -79,7 +79,7 @@ const InventoryList = (props) => {
         {props.inventory.map((item) => (
           <li key={item._id}>
             <p>{item.name}</p>
-            <p>Cost: {item.cost}</p>
+            <p>Price: {item.price}</p>
 
             {props.handleAddItem
               ? <button>Add Item</button>
@@ -96,7 +96,7 @@ const InventoryList = (props) => {
 export default InventoryList
 ```
 
-### Event Handler 
+### Adding the Event Handler 
 
 Update the Add Item button with an `onClick` event handler that calls upon `handleAddItem`.
 
@@ -110,13 +110,13 @@ Be sure to pass in the `item` object as an `argument`.
     </button>
 ```
 
-Notice how we pass an `item` argument to the `handleAddItem` function. When we pass a value to a function, we need to invoke the function. Invoking a function within an event handler will cause that function to run when the page loads. Wrapping it with an anonymous callback function will prevent that behavior. In short, the anonymous function ensures that `handleAddItem` only runs on click.
+Notice how we pass an `item` argument to the `handleAddItem` function. When we pass a value to a function, we need to invoke the function. Invoking a function within an event handler will cause that function to run when the page loads. Wrapping it with an anonymous callback function will prevent that behavior. In short, the anonymous function ensures that `handleAddItem` only runs on click, while allowing us to pass the function an argument.
 
-Check your browser. You should now be able to add items from the shop inventory to your 'cart'.
+Check your browser. You should now be able to add items from the shop inventory to your "cart".
 
 ### Removing items from an array
 
-Add the following to `Shop.jsx`. Similar to the handleAddItem function, when an item is removed from the user’s inventory, it should be  added to the shop’s inventory.
+Add the following to `Shop.jsx`. Similar to the `handleAddItem` function, when an item is removed from the user’s inventory, it should be added to the shop’s inventory.
 
 ```jsx
 // src/components/Shop/Shop.jsx
@@ -161,5 +161,79 @@ Update the Remove Item button with the following `onClick` event handler. Rememb
     </button>
 ```
 
-Check your browser. You should now be able to remove items from your cart!
+Check your browser. You should be able to add and remove items from your cart!
 
+### Wrapping up
+
+All of our functionality is now in place, but we don’t want to leave any un-styled buttons in our app. Let’s conclude this lesson with some basic CSS. 
+
+Run the following command in your terminal.
+
+```bash
+touch src/components/InventoryList/InventoryList.css
+```
+
+Add the following to `InventoryList.css`: 
+
+```css
+/* src/components/InventoryList/InventoryList.css */
+
+.inventory-list > ul {
+  padding: 0;
+}
+
+.inventory-list li {
+  width: 450px;
+  display: flex;
+  margin-top: 5px;
+  list-style: none;
+  border-radius: 5px;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid rgb(140, 140, 140);
+  box-sizing: border-box;
+}
+
+.inventory-list li > :first-child {
+  flex-grow: 100;
+  text-align: left;
+}
+
+.inventory-list li > :nth-child(2) {
+  padding-right: 32px;
+}
+```
+
+And finally, add an import to the top of `InventoryList.jsx`, and give the container `div` a `classname` of "inventory-list": 
+
+```jsx
+// src/components/InventoryList/InventoryList.jsx
+
+import './InventoryList.css'
+
+const InventoryList = (props) => {
+  return (
+    <div className="inventory-list">
+      <h2>{props.title}</h2>
+      <ul>
+      {props.inventory.map((item) => (
+          <li key={item._id}>
+            <p>{item.name}</p>
+						<p>Price: {item.price}</p>
+
+            {props.handleAddItem
+              ? <button onClick={() => props.handleAddItem(item)}>Add Item</button>
+              : <button onClick={() => props.handleRemoveItem(item)}>Remove Item</button>
+            }
+
+          </li>
+        ))}
+        </ul>
+    </div>
+  )
+}
+
+export default InventoryList
+```
+
+Congratulations, we're done! 
