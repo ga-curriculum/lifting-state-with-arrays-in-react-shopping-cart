@@ -37,11 +37,10 @@ Props are immutable; their values can never to be changed.
 
 Remember, the prop came from a component somewhere up the hierarchy, and if the prop's value originated from state, it would be **that** component's responsibility to update its state.
 
-However, a component can pass down methods via props that can update its state - but that's for another lesson.
 
 ## Working with Props
 
-Let’s move some of the code we wrote in `src/components/Shop/Shop.jsx` to a new component. This will help use keep our application organized and make our code more reusable. 
+Let’s move some of the code we wrote in `Shop.jsx` to a new component. This will help us keep our application organized and make our code more reusable. 
 
 Run the following commands in your terminal:
 
@@ -114,7 +113,7 @@ const InventoryList = (props) => {
         {props.inventory.map((item) => (
           <li key={item._id}>
             <p>{item.name}</p>
-						<p>Cost: {item.cost}</p>
+						<p>Price: {item.price}</p>
           </li>
         ))}
       </ul>

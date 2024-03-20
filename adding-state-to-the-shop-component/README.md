@@ -38,25 +38,27 @@ Let’s summarize the key differences between state and props:
 In our app, we will need state for remembering the following: 
 
 - items available in the shop (the shop’s inventory)
-- items in a user’s inventory
+- items in a user’s inventory (their "cart")
 
 Where are we going to store our state?
 
-If evaluating an application’s state and data structures seems complicated, that’s okay; it takes a bit of experience. Soon enough, you’ll be able to recognize scenarios that you’ve seen before and apply those previous data structures and patterns.
+If evaluating an application’s state and data structures seems complicated, that’s okay - it takes a bit of experience. Soon enough, you’ll be able to recognize scenarios that you’ve seen before and apply those previous data structures and patterns.
 
 ### Initializing State
 
-Let’s begin by importing `useState` in src/components/Shop/Shop.jsx.
+Let’s begin by importing `useState` in `Shop.jsx`.
 
 ```jsx
+// src/components/Shop/Shop.jsx
+
 // npm modules
 import { useState } from "react"
 ```
 
-Next, we’ll want to make a few updates to **`src/pages/Shop/Shop.jsx`**.
+Next, we’ll want to make a few updates to `Shop.jsx`.
 
-- Create a new `useState` variable called `inventory` and set the initial state to `inventoryData`.
-- Pass `inventory` state down as props to the `InventoryList`.
+First, we'll create a new `useState` variable called `inventory` and set the initial state to `inventoryData`.
+Then, we'll pass `inventory` state down as props to the `InventoryList`.
 
 The component should look like this when we are done:
 
@@ -88,7 +90,9 @@ const Shop = () => {
 export default Shop
 ```
 
-Check your browser. You’ll see the same list of inventory items as before, but the source of this data is now a useState variable called inventory, as opposed to the hardcoded inventoryData that we were rendering earlier. Here is the component hierarchy diagram for our work so far:
+Check your browser. You’ll see the same list of inventory items as before, but the source of this data is now a useState variable called inventory, as opposed to the hardcoded inventoryData that we were rendering earlier!
+
+Here is the component hierarchy diagram for our work so far:
 
 <img src="hierarchy.png" alt="hierarchy diagram">
 

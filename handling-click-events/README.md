@@ -4,7 +4,7 @@
 
 ## Browser Events in React
 
-To change inventory state, we’ll need to introduce browser events to our React App. Like many things in React, event handling is a little different than what we are used to.
+To change inventory state, we’ll need to introduce browser events to our React App. Like many things in React, event handling is a little different than what we may be used to with vanilla DOM manipulation.
 
 ### Connecting Handler Code to Events in React
 
@@ -20,33 +20,26 @@ Event observations thus far:
 
 ## Event Handling
 
-It’s not a bad idea to start the name of event handler methods with the word `handle`, e.g., `handleSomeInteraction`
+It’s convention to start the name of event handler methods with the word `handle`, e.g., `handleSomeInteraction`
 
 In the next step we’ll create a new function called `handleAddItem`. We’ll also want to add in a `<button>` tag with an `onClick` event handler. This will allow us to call upon the `handleAddItem` function when the user clicks the button. 
 
 We’ll refactor this later on, but for now we’ll use it to demonstrate how state can be updated. 
 
-Add the following to `Shop.jsx`.
+Make the following changes to `Shop.jsx`:
 
 ```jsx
 // src/components/Shop/Shop.jsx
 
-// npm modules
-import { useState } from "react"
-
-// components
-import InventoryList from "../../components/InventoryList/InventoryList"
-
-// data
-import { inventoryData } from "../../data/data"
-
 const Shop = () => {
   const [inventory, setInventory] = useState(inventoryData)
 
+  // Add the following function: 
   const handleAddItem = () => {
     setInventory([])
   }
 
+  // Add the button: 
   return (
     <main>
       <h1>Shop</h1>
@@ -83,7 +76,7 @@ Let’s try it out. Update the `handleAddItem` function as demonstrated below. T
 
 > You should be seeing an error in the browser console right now!
 
-In our `InventoryList` component, we are using the `Array.prototype.map()` on the `inventory` data that we passed down as props. This method is only accessible on arrays. In the previous step, we just changed the value of `inventory` state from an array of objects, to a single object. 
+In our `InventoryList` component, we are using `Array.prototype.map()` on the `inventory` data that we passed down as props. This method is only accessible on arrays. In the previous step, we changed the value of `inventory` state from an array of objects, to a single object - hence the error.  
 
 Let’s fix this issue next. Update `handleAddItem` with the following and try it out!
 
@@ -112,4 +105,6 @@ Can we add multiple items to state? Let’s try! Update `handleAddItem` with the
   }
 ```
 
-You should now be able to add these two items to `inventory` state, while maintaining the values held in state initially. In the next section, we’ll do a little refactoring so that this UI and functionality mirrors what we have in our mockup. 
+You should now be able to add these two items to `inventory` state. So far, we've figured out how to add objects to inventory state, but we're still working with a single inventory. 
+
+In the next section, we’ll do a little refactoring so that this UI and functionality mirrors what we have in our mockup. 
