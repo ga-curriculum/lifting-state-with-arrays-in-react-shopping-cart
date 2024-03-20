@@ -92,3 +92,4 @@ export default InventoryList
 ```
 
 Check your browser! You should see two lists. One for the shop’s inventory, and another for the user’s inventory. At the moment, only the shop’s inventory will include items. The two lists are currently stacked on top of one another, so you’ll need to scroll to the bottom of the page to see the user’s inventory. 
+
