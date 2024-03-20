@@ -1,44 +1,41 @@
-# ![[tktk Module Name]](./assets/tktk-hero.png)
+# ![React Shopping Cart](./assets/tktk-hero.png)
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module.
+This module serves as an introduction to working with arrays in state, as well as reuseable components in React.
 
 ## Prerequisites
 
-- tktk
-- tktk
-- tktk
+- Intro to React
+- React Components
+- React State Management
 
 ## Content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
 | [Setup](./setup/README.md)                               | -- | -- | Setting up the development environment  |
-| [Concepts](./concepts/README.md)                         | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-01/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-02/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-03/README.md) | -- | -- | tktk skills covered                     |
-| **Total content**                                        | -- | -- |                                         |
+| [Component Hierarchy and Layout](./component-hierarchy-and-layout/README.md)                         | -- | -- | Planning out component hierarchy for a React App                     |
+| [Building the Shop Component](./building-the-shop-component/README.md) | -- | -- | Creating a React component and mapping over data                     |
+| [Passing Props](./passing-props/README.md) | -- | -- | Passing props from a parent component to a child component                     |
+| [Adding State to the Shop Component](./adding-state-to-the-shop-component/README.md) | -- | -- | Putting data into state                     |
+| [Handling Click Events](./handling-click-events/README.md) | -- | -- | Impacting state with click event handlers                    |
+| [Reusing the InventoryList Component](./reusing-the-inventorylist-component/README.md) | -- | -- | Working with reuseable components in React                     |
+| [Updating Arrays in State](./updating-arrays-in-state/README.md) | -- | -- | "Moving" objects between two arrays held in state                      |
+|
+ **Total content**                                        | -- | -- |                                         |
 
 ## Level Up content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [tktk Microlesson Name](./tktk-microlesson-04/README.md) | -- | -- | tktk skills covered                     |
+| [UI Improvements](./ui-improvements/README.md) | -- | -- | Reflecting an empty array in the UI                     |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References
 
 📖 [Reference Materials](./references/README.md)
 
-## Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](#tktk-deployed-app-url)
-
-🐙 [Repository](#tktk-repository-for-deployed-app)
 
 ## Internal resources
 
