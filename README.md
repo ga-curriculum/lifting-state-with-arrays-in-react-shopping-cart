@@ -2,7 +2,7 @@
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module.
+This module serves as an introduction to working with arrays in state, as well as reuseable components in React.
 
 ## Prerequisites
 
