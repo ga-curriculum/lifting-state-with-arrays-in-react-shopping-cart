@@ -41,7 +41,7 @@ However, a component can pass down methods via props that can update its state -
 
 ## Working with Props
 
-Let’s move some of the code we wrote in **`src/components/Shop/Shop.jsx`** to a new component. This will help use keep our application organized and make our code more reusable. 
+Let’s move some of the code we wrote in `src/components/Shop/Shop.jsx` to a new component. This will help use keep our application organized and make our code more reusable. 
 
 Run the following commands in your terminal:
 
@@ -50,9 +50,11 @@ mkdir src/components/InventoryList
 touch src/components/InventoryList/InventoryList.jsx
 ```
 
-Add the following to `src/components/InventoryList/InventoryList.jsx`.
+Add the following to `InventoryList.jsx`.
 
 ```jsx
+// src/components/InventoryList/InventoryList.jsx
+
 const InventoryList = (props) => {
   return (
     <div>

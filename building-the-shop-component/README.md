@@ -27,7 +27,7 @@ const Shop = () => {
 export default Shop
 ```
 
-In `src/App.jsx`, clear out all the existing code from inside the function and remove any imports that are now unused. Import the newly created `Shop` component and add it inside of a `return`.
+In `src/App.jsx`, import the newly created `Shop` component and add it inside of a `return`.
 
 ```jsx
 // src/App.jsx
@@ -102,7 +102,7 @@ export const inventoryData = [
 ]
 ```
 
-Within `src/components/Shop/Shop.jsx`, import the `inventoryData` and verify that it is available in the component with a console.log: 
+Within `Shop.jsx`, import the `inventoryData` and verify that it is available in the component with a console.log: 
 
 ```jsx
 // src/components/Shop/Shop.jsx
