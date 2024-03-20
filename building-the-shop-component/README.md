@@ -7,7 +7,7 @@
 Let’s begin by creating the Shop component. Run the following commands in your terminal.
 
 ```bash
-mkdir src/components/Shop
+mkdir src/components src/components/Shop
 touch src/components/Shop/Shop.jsx
 ```
 
@@ -27,7 +27,7 @@ const Shop = () => {
 export default Shop
 ```
 
-In `src/App.jsx`, import the newly created `Shop` component and add it inside of a `return`.
+In `App.jsx`, import the newly created `Shop` component and add it inside of a `return`.
 
 ```jsx
 // src/App.jsx
@@ -51,7 +51,7 @@ If you start up your application now, you should be able to see the `h1` title o
 
 ## Review of Built-in vs. User-defined Components
 
-As we've seen, React has several built-in components, such as <input />, that map to HTML elements. These built-in components are the only components that emit DOM elements in the browser document. These components are often called React Elements.
+As we've seen, React has several built-in components, such as `<input />`, that map to HTML elements. These built-in components are the only components that emit DOM elements in the browser document. These components are often called React Elements.
 
 React components are lower-cased, for example `<div>`, while User-defined components are capitalized, like `<NavBar>`.
 
@@ -157,7 +157,7 @@ const Shop = () => {
         {inventoryData.map((item) => (
           <li key={item._id}>
             <p>{item.name}</p>
-            <p>Cost: {item.cost}</p>
+            <p>Price: {item.price}</p>
           </li>
         ))}
       </ul>
