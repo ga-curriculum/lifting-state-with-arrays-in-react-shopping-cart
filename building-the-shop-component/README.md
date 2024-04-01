@@ -17,13 +17,13 @@ Next, stub up the `Shop.jsx` component with the following:
 // src/components/Shop/Shop.jsx
 
 const Shop = () => {
-  return ( 
-    <main>
-	    <h1>Shop</h1>
-    </main>
-   )
+    return (
+        <main>
+            <h1>Shop</h1>
+        </main>
+    )
 }
- 
+
 export default Shop
 ```
 
@@ -39,9 +39,9 @@ import Shop from './components/Shop/Shop'
 import './App.css'
 
 function App() {
-  return (
-		<Shop />
-  )
+    return (
+        <Shop />
+    )
 }
 
 export default App
@@ -111,12 +111,12 @@ Within `Shop.jsx`, import the `inventoryData` and verify that it is available in
 import { inventoryData } from "../../data/data"
 
 const Shop = () => {
-  console.log('Inventory Data:', inventoryData)
-  return (
-    <main>
-      <h1>Shop</h1>
-    </main>
-  )
+    console.log('Inventory Data:', inventoryData)
+    return (
+        <main>
+            <h1>Shop</h1>
+        </main>
+    )
 }
 
 export default Shop

@@ -34,19 +34,19 @@ Pass the function down to the `InventoryList` component that has a title of “S
 ```jsx
 // src/components/Shop/Shop.jsx
 
-  return (
-    <main>
-      <h1>Shop</h1>
-      <section className="shop-section">
-        <InventoryList
-          title="Shop Inventory"
-          inventory={shopInventory}
-          handleAddItem={handleAddItem}
-        />
-        <InventoryList title="User Inventory" inventory={userInventory} />
-      </section>
-    </main>
-  )
+return (
+        <main>
+            <h1>Shop</h1>
+            <section className="shop-section">
+                <InventoryList
+                    title="Shop Inventory"
+                    inventory={shopInventory}
+                    handleAddItem={handleAddItem}
+                />
+                <InventoryList title="User Inventory" inventory={userInventory} />
+            </section>
+        </main>
+    )
 ```
 
 ### Conditional Rendering
@@ -72,25 +72,25 @@ Add the ternary to `InventoryList.jsx`.
 // src/components/InventoryList/
 
 const InventoryList = (props) => {
-  return (
-    <div>
-      <h2>{props.title}</h2>
-      <ul>
-        {props.inventory.map((item) => (
-          <li key={item._id}>
-            <p>{item.name}</p>
-            <p>Price: {item.price}</p>
+    return (
+        <div>
+            <h2>{props.title}</h2>
+            <ul>
+                {props.inventory.map((item) => (
+                    <li key={item._id}>
+                        <p>{item.name}</p>
+                        <p>Price: {item.price}</p>
 
-            {props.handleAddItem
-              ? <button>Add Item</button>
-              : <button>Remove Item</button>
-            }
+                        {props.handleAddItem
+                            ? <button>Add Item</button>
+                            : <button>Remove Item</button>
+                        }
 
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default InventoryList
@@ -133,22 +133,22 @@ Pass the function down to the `InventoryList` component with a title of “User 
 // src/components/Shop/Shop.jsx
 
 return (
-  <main>
-    <h1>Shop</h1>
-    <section style={style}>
-      <InventoryList
-        title="Shop Inventory"
-        inventory={shopInventory}
-        handleAddItem={handleAddItem}
-      />
-      <InventoryList
-        title="User Inventory"
-        inventory={userInventory}
-        handleRemoveItem={handleRemoveItem}
-      />
-    </section>
-  </main>
-)
+        <main>
+            <h1>Shop</h1>
+            <section className="shop-section">
+                <InventoryList
+                    title="Shop Inventory"
+                    inventory={shopInventory}
+                    handleAddItem={handleAddItem}
+                />
+                <InventoryList
+                    title="User Inventory"
+                    inventory={userInventory}
+                    handleRemoveItem={handleRemoveItem}
+                />
+            </section>
+        </main>
+    )
 ```
 
 Update the Remove Item button with the following `onClick` event handler. Remember to pass in the `item` object.
@@ -212,25 +212,25 @@ And finally, add an import to the top of `InventoryList.jsx`, and give the conta
 import './InventoryList.css'
 
 const InventoryList = (props) => {
-  return (
-    <div className="inventory-list">
-      <h2>{props.title}</h2>
-      <ul>
-      {props.inventory.map((item) => (
-          <li key={item._id}>
-            <p>{item.name}</p>
-						<p>Price: {item.price}</p>
+    return (
+        <div className="inventory-list">
+            <h2>{props.title}</h2>
+            <ul>
+                {props.inventory.map((item) => (
+                    <li key={item._id}>
+                        <p>{item.name}</p>
+                        <p>Price: {item.price}</p>
 
-            {props.handleAddItem
-              ? <button onClick={() => props.handleAddItem(item)}>Add Item</button>
-              : <button onClick={() => props.handleRemoveItem(item)}>Remove Item</button>
-            }
+                        {props.handleAddItem
+                            ? <button onClick={() => props.handleAddItem(item)}>Add Item</button>
+                            : <button onClick={() => props.handleRemoveItem(item)}>Remove Item</button>
+                        }
 
-          </li>
-        ))}
-        </ul>
-    </div>
-  )
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default InventoryList

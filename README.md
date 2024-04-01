@@ -23,7 +23,7 @@ This module serves as an introduction to working with arrays in state, as well a
 | [Reusing the InventoryList Component](./reusing-the-inventorylist-component/README.md) | -- | -- | Working with reuseable components in React                     |
 | [Updating Arrays in State](./updating-arrays-in-state/README.md) | -- | -- | "Moving" objects between two arrays held in state                      |
 |
- **Total content**                                        | -- | -- |                                         |
+| **Total content**                                        | -- | -- |                                         |
 
 ## Level Up content
 

@@ -45,23 +45,23 @@ import InventoryList from "../../components/InventoryList/InventoryList"
 import { inventoryData } from "../../data/data"
 
 const Shop = () => {
-  // Create state variables for the shop and user inventories.
-  const [shopInventory, setShopInventory] = useState(inventoryData)
-  const [userInventory, setUserInventory] = useState([])
+    // Create state variables for the shop and user inventories.
+    const [shopInventory, setShopInventory] = useState(inventoryData)
+    const [userInventory, setUserInventory] = useState([])
 
-  const handleAddItem = () => {
-    // We'll refactor this in a bit
-  }
+    const handleAddItem = () => {
+        // We'll refactor this in a bit
+    }
 
-  return (
-    <main>
-      <h1>Shop</h1>
-      <section>
-        <InventoryList title="Shop Inventory" inventory={shopInventory} />
-        <InventoryList title="User Inventory" inventory={userInventory} />
-      </section>
-    </main>
-  )
+    return (
+        <main>
+            <h1>Shop</h1>
+            <section>
+                <InventoryList title="Shop Inventory" inventory={shopInventory} />
+                <InventoryList title="User Inventory" inventory={userInventory} />
+            </section>
+        </main>
+    )
 }
 
 export default Shop
@@ -73,19 +73,19 @@ Head back to `InventoryList.jsx`. We need to update the `h2` tag to make use of 
 // src/components/InventoryList/InventoryList.jsx
 
 const InventoryList = (props) => {
-  return (
-    <div>
-      <h2>{props.title}</h2> 
-      <ul>
-        {props.inventory.map((item) => (
-          <li key={item._id}>
-            <p>{item.name}</p>
-						<p>Price: {item.price}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+    return (
+        <div>
+            <h2>{props.title}</h2>
+            <ul>
+                {props.inventory.map((item) => (
+                    <li key={item._id}>
+                        <p>{item.name}</p>
+                        <p>Price: {item.price}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default InventoryList
@@ -125,22 +125,22 @@ import { inventoryData } from "../../data/data"
 import "./Shop.css"
 
 const Shop = () => {
-  const [shopInventory, setShopInventory] = useState(inventoryData)
-  const [userInventory, setUserInventory] = useState([])
+    const [shopInventory, setShopInventory] = useState(inventoryData)
+    const [userInventory, setUserInventory] = useState([])
 
-	const handleAddItem = () => {
-    // We'll refactor this in the following steps
-  }
+    const handleAddItem = () => {
+        // We'll refactor this in the following steps
+    }
 
-  return (
-    <main>
-      <h1>Shop</h1>
-      <section className="shop-section"> 
-        <InventoryList title="Shop Inventory" inventory={shopInventory} />
-        <InventoryList title="User Inventory" inventory={userInventory} />
-      </section>
-    </main>
-  )
+    return (
+        <main>
+            <h1>Shop</h1>
+            <section className="shop-section">
+                <InventoryList title="Shop Inventory" inventory={shopInventory} />
+                <InventoryList title="User Inventory" inventory={userInventory} />
+            </section>
+        </main>
+    )
 }
 
 export default Shop

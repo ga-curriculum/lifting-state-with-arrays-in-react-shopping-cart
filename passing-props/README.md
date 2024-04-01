@@ -55,14 +55,14 @@ Add the following to `InventoryList.jsx`.
 // src/components/InventoryList/InventoryList.jsx
 
 const InventoryList = (props) => {
-  return (
-    <div>
-      <h2>Inventory List</h2>
-      <ul>
-        ...map here
-      </ul>
-    </div>
-  )
+    return (
+        <div>
+            <h2>Inventory List</h2>
+            <ul>
+                ...map here
+            </ul>
+        </div>
+    )
 }
 
 export default InventoryList
@@ -89,12 +89,12 @@ import InventoryList from "../../components/InventoryList/InventoryList"
 import { inventoryData } from "../../data/data"
 
 const Shop = () => {
-  return (
-    <main>
-      <h1>Shop</h1>
-      <InventoryList inventory={inventoryData} />
-    </main>
-  )
+    return (
+        <main>
+            <h1>Shop</h1>
+            <InventoryList inventory={inventoryData} />
+        </main>
+    )
 }
 
 export default Shop
@@ -106,19 +106,19 @@ After verifying that `props` are being passed down correctly, `map` through `pro
 // src/components/InventoryList/InventoryList.jsx
 
 const InventoryList = (props) => {
-  return (
-    <div>
-      <h2>Inventory List</h2>
-      <ul>
-        {props.inventory.map((item) => (
-          <li key={item._id}>
-            <p>{item.name}</p>
-						<p>Price: {item.price}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+    return (
+        <div>
+            <h2>Inventory List</h2>
+            <ul>
+                {props.inventory.map((item) => (
+                    <li key={item._id}>
+                        <p>{item.name}</p>
+                        <p>Price: {item.price}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default InventoryList 
