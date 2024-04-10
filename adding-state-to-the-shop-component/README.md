@@ -94,5 +94,4 @@ Check your browser. You’ll see the same list of inventory items as before, but
 
 Here is the component hierarchy diagram for our work so far:
 
-<img src="hierarchy.png" alt="hierarchy diagram">
-
+tktk - Hunter can you create a hierarchy diagram for this lesson?

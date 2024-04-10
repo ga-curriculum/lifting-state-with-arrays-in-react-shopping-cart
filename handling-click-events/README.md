@@ -32,21 +32,21 @@ Make the following changes to `Shop.jsx`:
 // src/components/Shop/Shop.jsx
 
 const Shop = () => {
-  const [inventory, setInventory] = useState(inventoryData)
+    const [inventory, setInventory] = useState(inventoryData)
 
-  // Add the following function: 
-  const handleAddItem = () => {
-    setInventory([])
-  }
+    // Add the following function: 
+    const handleAddItem = () => {
+        setInventory([])
+    }
 
-  // Add the button: 
-  return (
-    <main>
-      <h1>Shop</h1>
-      <button onClick={handleAddItem}>Click Here</button>
-      <InventoryList inventory={inventory} />
-    </main>
-  )
+    // Add the button: 
+    return (
+        <main>
+            <h1>Shop</h1>
+            <button onClick={handleAddItem}>Click Here</button>
+            <InventoryList inventory={inventory} />
+        </main>
+    )
 }
 
 export default Shop
