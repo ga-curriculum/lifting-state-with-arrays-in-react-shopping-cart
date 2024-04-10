@@ -21,8 +21,7 @@ This module serves as an introduction to working with arrays in state, as well a
 | [Adding State to the Shop Component](./adding-state-to-the-shop-component/README.md) | -- | -- | Putting data into state                     |
 | [Handling Click Events](./handling-click-events/README.md) | -- | -- | Impacting state with click event handlers                    |
 | [Reusing the InventoryList Component](./reusing-the-inventorylist-component/README.md) | -- | -- | Working with reuseable components in React                     |
-| [Updating Arrays in State](./updating-arrays-in-state/README.md) | -- | -- | "Moving" objects between two arrays held in state                      |
-|
+| [Updating Arrays in State](./updating-arrays-in-state/README.md) | -- | -- | "Moving" objects between two arrays held in state                      
 | **Total content**                                        | -- | -- |                                         |
 
 ## Level Up content
