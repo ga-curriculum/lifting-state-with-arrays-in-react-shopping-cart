@@ -1,4 +1,4 @@
-# ![React Shopping Cart - UI Improvements](./assets/hero.png)
+# ![Lifting State with Arrays in React - Shopping Cart - UI Improvements](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to reflect an empty array in the UI using a ternary operator.  
 

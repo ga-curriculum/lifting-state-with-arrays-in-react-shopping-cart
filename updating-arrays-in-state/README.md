@@ -1,4 +1,4 @@
-# ![React Shopping Cart - Updating Arrays in State](./assets/hero.png)
+# ![Lifting State with Arrays in React - Shopping Cart - Updating Arrays in State](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to "move" objects between two arrays held in state.
 
