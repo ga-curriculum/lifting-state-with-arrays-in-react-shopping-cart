@@ -1,4 +1,4 @@
-# ![React Shopping Cart - Adding State to the Shop Component](./assets/hero.png)
+# ![Lifting State with Arrays in React - Shopping Cart - Adding State to the Shop Component](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to import data and use it as the initial value of a state variable.
 
@@ -94,4 +94,4 @@ Check your browser. You’ll see the same list of inventory items as before, but
 
 Here is the component hierarchy diagram for our work so far:
 
-tktk - Hunter can you create a hierarchy diagram for this lesson?
+![CHD](./assets/adding-state-chd.png)

@@ -1,4 +1,4 @@
-# ![React Shopping Cart - Setup](./assets/hero.png)
+# ![Lifting State with Arrays in React - Shopping Cart - Setup](./assets/hero.png)
 
 ## Setup
 

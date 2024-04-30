@@ -1,4 +1,4 @@
-# ![React Shopping Cart - References](./assets/hero.png)
+# ![Lifting State with Arrays in React - Shopping Cart - References](./assets/hero.png)
 
 ## Lesson references
 
