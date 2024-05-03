@@ -1,8 +1,16 @@
 # ![Lifting State with Arrays in React - Shopping Cart](../assets/hero.png)
 
+Welcome to Reactville, a constantly evolving virtual metropolis. Let's build this digital town together, one component at a time.
+
+![Reactville Banner](../assets/reactville.png)
+
 ## About
 
-This module explores advanced React techniques focusing on managing complex data structures like arrays in state and leveraging reusable components. You will learn how to construct a dynamic shopping cart application, starting from setting up your development environment to deploying functional, interactive components. The lessons cover essential skills such as component hierarchy planning, data handling between parent and child components, managing state with arrays, and responding to user events like clicks. By the end of this module, you'll be equipped to build more sophisticated and interactive web applications using React.
+The local supermarket is implementing a new online ordering system and needs help building the user interface for a virtual shopping cart. Shoppers will be able to visually move items back and forth between the store shelves and their shopping carts.
+
+![Solution UI](../assets/solution-ui.png)
+
+In this module, students will explore advanced React techniques for managing more complex data structures like arrays in state. They'll gain practical experience by building a shopping cart application that responds to user actions. The key feature of this module is using event-driven programming to transfer items between two state arrays — representing the shop's inventory and the user’s cart. By the end of this module, students will have created a functional, interactive shopping cart using a reusable inventory component that visually represents both the store's and the user's inventory.
 
 ## Content
 
