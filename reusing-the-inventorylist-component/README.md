@@ -165,5 +165,6 @@ In `Shop.css`, add the following styles:
 }
 ```
 
-Refresh the browser - you should see each list as a distinct column. 
+Refresh the browser - you should see each list as a distinct column.
 
+> Don't see the changes yet? It may be our linter waiting for changes in your Shop.jsx file before rendering the CSS. Those changes happen in the next lesson 'Updated Arrays in State.' So if this applies to you, refresh your browser after the next lesson to see the full changes.
