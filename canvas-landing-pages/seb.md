@@ -30,3 +30,7 @@ In this module, students will explore advanced React techniques for managing mor
 | Lesson                                          | Skills                              |
 | ----------------------------------------------- | ----------------------------------- |
 | [UI Improvements](../ui-improvements/README.md) | Reflecting an empty array in the UI |
+
+## References
+
+📖 [Reference Materials](../references/README.md)
