@@ -6,13 +6,9 @@
 
 ### What are Props?
 
-A parent component uses props to pass data/state and references to methods down to child components.
+A parent component uses props to pass data/state and references to methods down to child components. A prop looks much like an `attribute=value` pair in an HTML element. As discussed in the JSX lesson, we use camelCasing to name our props instead of the kebab-casing preferred in HTML.
 
-A prop looks much like an `attribute=value` pair in an HTML element.
-
-As discussed in the JSX lesson, we use camelCasing to name our props instead of the kebab-casing preferred in HTML.
-
-Note that it’s common to pass the same data as a prop, over and over, down the component hierarchy.
+> Note that it’s common to pass the same data as a prop, over and over, down the component hierarchy.
 
 ### Passing Props
 
@@ -24,7 +20,7 @@ With the Chrome (or Firefox, or Edge) extension installed, you will now see a **
 
 ### Accessing Passed Props
 
-When React renders a Functional Component, it will always pass in props as the first argument to the function. As a result, we can always access props as a parameter like so: 
+When React renders a Functional Component, it will always pass in props as the first argument to the function. As a result, we can always access props as a parameter like so:
 
 ```jsx
 const ComponentName = (props) => (
@@ -37,10 +33,9 @@ Props are immutable; their values can never to be changed.
 
 Remember, the prop came from a component somewhere up the hierarchy, and if the prop's value originated from state, it would be **that** component's responsibility to update its state.
 
-
 ## Working with Props
 
-Let’s move some of the code we wrote in `Shop.jsx` to a new component. This will help us keep our application organized and make our code more reusable. 
+Let’s move some of the code we wrote in `Shop.jsx` to a new component. This will help us keep our application organized and make our code more reusable.
 
 Run the following commands in your terminal:
 
@@ -55,17 +50,15 @@ Add the following to `InventoryList.jsx`.
 // src/components/InventoryList/InventoryList.jsx
 
 const InventoryList = (props) => {
-    return (
-        <div>
-            <h2>Inventory List</h2>
-            <ul>
-                ...map here
-            </ul>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h2>Inventory List</h2>
+      <ul>...map here</ul>
+    </div>
+  );
+};
 
-export default InventoryList
+export default InventoryList;
 ```
 
 Back in `Shop.jsx`, import the newly created `InventoryList` component.
@@ -74,7 +67,7 @@ Back in `Shop.jsx`, import the newly created `InventoryList` component.
 // src/components/Shop/Shop.jsx
 
 // components
-import InventoryList from "../../components/InventoryList/InventoryList"
+import InventoryList from '../../components/InventoryList/InventoryList';
 ```
 
 Add the `InventoryList` component within the `main` tag, and pass it an `inventory` prop with a value set to `inventoryData` (this approach will make more sense in the next few steps).
@@ -83,21 +76,21 @@ Add the `InventoryList` component within the `main` tag, and pass it an `invento
 // src/components/Shop/Shop.jsx
 
 // components
-import InventoryList from "../../components/InventoryList/InventoryList"
+import InventoryList from '../../components/InventoryList/InventoryList';
 
 // data
-import { inventoryData } from "../../data/data"
+import { inventoryData } from '../../data/data';
 
 const Shop = () => {
-    return (
-        <main>
-            <h1>Shop</h1>
-            <InventoryList inventory={inventoryData} />
-        </main>
-    )
-}
+  return (
+    <main>
+      <h1>Shop</h1>
+      <InventoryList inventory={inventoryData} />
+    </main>
+  );
+};
 
-export default Shop
+export default Shop;
 ```
 
 After verifying that `props` are being passed down correctly, `map` through `props.inventory` to produce an array of `li` tags in `InventoryList.jsx`.
@@ -106,22 +99,22 @@ After verifying that `props` are being passed down correctly, `map` through `pro
 // src/components/InventoryList/InventoryList.jsx
 
 const InventoryList = (props) => {
-    return (
-        <div>
-            <h2>Inventory List</h2>
-            <ul>
-                {props.inventory.map((item) => (
-                    <li key={item._id}>
-                        <p>{item.name}</p>
-                        <p>Price: {item.price}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h2>Inventory List</h2>
+      <ul>
+        {props.inventory.map((item) => (
+          <li key={item._id}>
+            <p>{item.name}</p>
+            <p>Price: {item.price}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default InventoryList 
+export default InventoryList;
 ```
 
 At the moment, there is no way for a user to make changes to the inventory list, as we are rendering a hardcoded array of objects.

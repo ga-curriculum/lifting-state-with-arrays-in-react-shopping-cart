@@ -30,18 +30,20 @@ In this module, students will explore advanced React techniques for managing mor
 | [Handling Click Events](./handling-click-events/README.md)                             | Impacting state with click event handlers                  |
 | [Reusing the InventoryList Component](./reusing-the-inventorylist-component/README.md) | Working with reuseable components in React                 |
 | [Updating Arrays in State](./updating-arrays-in-state/README.md)                       | "Moving" objects between two arrays held in state          |
-| **Total content**                                                                      |                                                            |
 
 ## Level Up content
 
 | Lesson                                         | Skills                              |
 | ---------------------------------------------- | ----------------------------------- |
 | [UI Improvements](./ui-improvements/README.md) | Reflecting an empty array in the UI |
-| **Total Level Up content**                     |                                     |
 
 ## References
 
 📖 [Reference Materials](./references/README.md)
+
+## Solution code
+
+🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/lifting-state-with-arrays-in-react-shopping-cart-solution)
 
 ## Internal resources
 

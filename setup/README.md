@@ -67,25 +67,7 @@ const App = () => {
 export default App
 ```
 
-### GitHub setup
-
-To add this project to GitHub, initialize a Git repository:
-
-```bash
-git init
-```
-
-Make a new repository on [GitHub](https://github.com/) named react-shopping-cart. 
-
-Link your local project to your remote GitHub repo:
-
-```bash
-git remote add origin https://github.com/<github-username>/react-shopping-cart.git
-```
-
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
-
-## Running the development server
+### Running the development server
 
 To start the development server and view our app in the browser, we'll use the following command: 
 
@@ -100,3 +82,24 @@ localhost:5173
 ```
 
 Navigate there, and you should see the `<h1>` from our `App.jsx` component displayed!
+
+### GitHub setup
+
+To add this project to GitHub, initialize a Git repository:
+
+```bash
+git init
+git add .
+git commit -m "init commit"
+```
+
+Make a new repository on [GitHub](https://github.com/) named react-shopping-cart. 
+
+Link your local project to your remote GitHub repo:
+
+```bash
+git remote add origin https://github.com/<github-username>/react-shopping-cart.git
+git push origin main
+```
+
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.

@@ -33,9 +33,9 @@ Let’s summarize the key differences between state and props:
 - Props cannot be modified
 - Cannot be changed so can not trigger a render - methods can be passed through `props` that will update state on the component that owns the state
 
-### State in our App
+## State in our App
 
-In our app, we will need state for remembering the following: 
+In our app, we will need state for remembering the following:
 
 - items available in the shop (the shop’s inventory)
 - items in a user’s inventory (their "cart")
@@ -52,7 +52,7 @@ Let’s begin by importing `useState` in `Shop.jsx`.
 // src/components/Shop/Shop.jsx
 
 // npm modules
-import { useState } from "react"
+import { useState } from 'react';
 ```
 
 Next, we’ll want to make a few updates to `Shop.jsx`.
@@ -66,28 +66,28 @@ The component should look like this when we are done:
 // src/components/Shop/Shop.jsx
 
 // npm modules
-import { useState } from "react"
+import { useState } from 'react';
 
 // components
-import InventoryList from "../../components/InventoryList/InventoryList"
+import InventoryList from '../../components/InventoryList/InventoryList';
 
 // data
-import { inventoryData } from "../../data/data"
+import { inventoryData } from '../../data/data';
 
 const Shop = () => {
   // Create state variable and pass new inventory state
   // to the InventoryList component below
-  const [inventory, setInventory] = useState(inventoryData)
+  const [inventory, setInventory] = useState(inventoryData);
 
   return (
     <main>
       <h1>Shop</h1>
       <InventoryList inventory={inventory} />
     </main>
-  )
-}
+  );
+};
 
-export default Shop
+export default Shop;
 ```
 
 Check your browser. You’ll see the same list of inventory items as before, but the source of this data is now a useState variable called inventory, as opposed to the hardcoded inventoryData that we were rendering earlier!
