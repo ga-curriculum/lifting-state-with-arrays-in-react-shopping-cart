@@ -1,0 +1,67 @@
+import "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/static/v2/pkl/template.pkl" as Template
+
+// Add microlessons here, in the order they should be delivered
+
+setup = new Template.Microlesson {
+  friendlyName = "Setup"
+  dirName = "setup"
+  type = "Content"
+  videoUrl = ""
+}
+
+componentHierarchyAndLayout = new Template.Microlesson {
+  friendlyName = "Component Hierarchy and Layout"
+  dirName = "component-hierarchy-and-layout"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildingTheShopComponent = new Template.Microlesson {
+  friendlyName = "Building the <code>Shop</code> Component"
+  dirName = "building-the-shop-component"
+  type = "Content"
+  videoUrl = ""
+}
+
+passingProps = new Template.Microlesson {
+  friendlyName = "Passing Props"
+  dirName = "passing-props"
+  type = "Content"
+  videoUrl = ""
+}
+
+addingStateToTheShopComponent = new Template.Microlesson {
+  friendlyName = "Adding State to the <code>Shop</code> Component"
+  dirName = "adding-state-to-the-shop-component"
+  type = "Content"
+  videoUrl = ""
+}
+
+handlingClickEvents = new Template.Microlesson {
+  friendlyName = "Handling Click Events"
+  dirName = "handling-click-events"
+  type = "Content"
+  videoUrl = ""
+}
+
+reusingTheInventoryListComponent = new Template.Microlesson {
+  friendlyName = "Reusing the <code>InventoryList</code> Component"
+  dirName = "reusing-the-inventorylist-component"
+  type = "Content"
+  videoUrl = ""
+}
+
+updatingArraysInState = new Template.Microlesson {
+  friendlyName = "Updating Arrays in State"
+  dirName = "updating-arrays-in-state"
+  type = "Content"
+  videoUrl = ""
+}
+
+uiImprovements = new Template.Microlesson {
+  friendlyName = "UI Improvements"
+  dirName = "ui-improvements"
+  type = "Content"
+  videoUrl = ""
+}
+

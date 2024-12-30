@@ -1,4 +1,7 @@
-# ![Lifting State with Arrays in React - Shopping Cart - Setup](./assets/hero.png)
+<h1>
+  <span class="headline">Shopping Cart</span>
+  <span class="subhead">Setup</span>
+</h1>
 
 ## Setup
 
@@ -35,20 +38,25 @@ code .
 
 ### Configuring ESLint
 
-Before we begin, we need to adjust the ESLint configuration. Add the following rules to the `.eslintrc.cjs` file:
+Before we begin, we need to adjust the ESLint configuration. Add the indicated rules to the `rules` object in your `eslint.config.js` file:
 
-```js
-rules: {
-  'react-refresh/only-export-components': [
-    'warn',
-    { allowConstantExport: true },
-  ],
-  'react/prop-types': 'off', // add this line
-  'react/no-unescaped-entities': 'off' // add this line
-},
+```javascript
+    rules: {
+      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+      ...reactHooks.configs.recommended.rules,
+      'react/jsx-no-target-blank': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+      'react/prop-types': 'off', // add this line
+      'react/no-unescaped-entities': 'off', // add this line
+    },
 ```
 
-The first addition prevents warnings if you're not declaring types for your props (which we're not), and the second prevents warnings if you're using contractions within JSX.
+The first addition prevents warnings if you don't declare types for your props (which we're not), and the second prevents warnings if you use contractions within JSX.
 
 ### Clear `App.jsx`
 
@@ -69,13 +77,13 @@ export default App
 
 ### Running the development server
 
-To start the development server and view our app in the browser, we'll use the following command: 
+To start the development server and view our app in the browser, we'll use the following command:
 
 ```bash
 npm run dev
 ```
 
-You should see that `Vite` is available on port number 5173: 
+You should see that `Vite` is available on port number 5173:
 
 ```plaintext
 localhost:5173
@@ -93,7 +101,7 @@ git add .
 git commit -m "init commit"
 ```
 
-Make a new repository on [GitHub](https://github.com/) named react-shopping-cart. 
+Make a new repository on [GitHub](https://github.com/) named `react-shopping-cart`.
 
 Link your local project to your remote GitHub repo:
 

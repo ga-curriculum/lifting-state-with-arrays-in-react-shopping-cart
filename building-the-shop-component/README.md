@@ -1,10 +1,13 @@
-# ![Lifting State with Arrays in React - Shopping Cart - Building the Shop Component](./assets/hero.png)
+<h1>
+  <span class="headline">Lifting State with Arrays in React Shopping Cart</span>
+  <span class="subhead">Building the <code>Shop</code> Component</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to create a React component and map over data.
 
-## Building the Shop Component
+## Build the `Shop` component
 
-Let’s begin by creating the Shop component. Run the following commands in your terminal.
+Let's begin by creating the `Shop` component. Run the following commands in your terminal.
 
 ```bash
 mkdir src/components src/components/Shop
@@ -27,7 +30,7 @@ const Shop = () => {
 export default Shop;
 ```
 
-In `App.jsx`, import the newly created `Shop` component and add it inside of a `return`.
+In `App.jsx`, import the newly created `Shop` component and add it inside a `return`.
 
 ```jsx
 // src/App.jsx
@@ -45,19 +48,19 @@ function App() {
 export default App;
 ```
 
-If you start up your application now, you should be able to see the `h1` title of our shop page.
+If you start up your application now, you should be able to see the `h1` title on our shop page.
 
-## Review of Built-in vs. User-defined Components
+## Review of built-in vs. user-defined components
 
-As we've seen, React has several built-in components, such as `<input />`, that map to HTML elements. These built-in components are the only components that emit DOM elements in the browser document. These components are often called React Elements.
+As we've seen, React has several built-in components, such as `<input />`, that map to HTML elements. These built-in components are the only ones that emit DOM elements in the browser document. These components are often called React Elements.
 
-React components are lower-cased, for example `<div>`, while User-defined components are capitalized, like `<NavBar>`.
+React components are lowercase, for example, `<div>`. User-defined components, like `<NavBar>`, are capitalized.
 
-Our user-defined custom components may consist of any other user-defined components or React Elements.
+User-defined components may consist of any other user-defined components or React Elements.
 
-## Working with Data
+## Working with data
 
-Let’s get a sense of the data we’ll be working with in the `Shop` component. Take a moment to study the `inventoryData` array show below. Next, we’ll need to add it to our application and import it within the appropriate component.
+Let's get a sense of the data we'll work with in the `Shop` component. Take a moment to study the `inventoryData` array shown below. Next, we must add it to our application and import it within the appropriate component.
 
 Run the following commands in your terminal.
 
@@ -120,11 +123,11 @@ const Shop = () => {
 export default Shop;
 ```
 
-## Displaying Data
+## Displaying data
 
-Next we’ll need to display this data on the page. To do so, we’ll `map` through the `inventoryData` and produce an `<li>` tag for each object in the `inventoryData` array.
+Next, we'll need to display this data on the page. To do so, we'll `map` through the `inventoryData` and produce an `<li>` tag for each object in the `inventoryData` array.
 
-Mapping in React can be a little confusing. Let’s try to visualize the process.
+Mapping in React can be confusing. Let's try to visualize the process.
 
 When we `map` in React, we can take an array of objects like this:
 
@@ -167,4 +170,4 @@ const Shop = () => {
 export default Shop;
 ```
 
-Check your browser. You should now see a list of items. This works fine, but we’ll probably want to move some of this code to another component. In doing so, we’ll need to start working with `props`.
+Check your browser. You should now see a list of items. This works fine, but we'll probably want to move some of this code to another component. In doing so, we'll need to start working with `props`.

@@ -1,24 +1,25 @@
-# ![Lifting State with Arrays in React - Shopping Cart - Passing Props](./assets/hero.png)
+<h1>
+  <span class="headline">Shopping Cart</span>
+  <span class="subhead">Passing Props</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to pass props from a parent component to a child component.
 
-## Props Refresher
+## What are props?
 
-### What are Props?
+A parent component uses props to pass data/state and references to methods down to child components. A prop looks much like an `attribute=value` pair in an HTML element. We use camelCase to name our props instead of the kebab-casing preferred in HTML.
 
-A parent component uses props to pass data/state and references to methods down to child components. A prop looks much like an `attribute=value` pair in an HTML element. As discussed in the JSX lesson, we use camelCasing to name our props instead of the kebab-casing preferred in HTML.
+> 💡 Note that it's common to pass the same data as a prop, over and over, down the component hierarchy.
 
-> Note that it’s common to pass the same data as a prop, over and over, down the component hierarchy.
+### Passing props
 
-### Passing Props
+You must use curly braces to pass any value other than a simple string (even template literals must be surrounded by curly braces).
 
-You must use curly braces to pass any value other than a simple string (even template literals need to be surrounded by curly braces).
+Just like Chrome's DevTools are invaluable when troubleshooting the DOM, so are React's Developer Tools when it comes to troubleshooting a React app!
 
-Just like how Chrome’s DevTools are invaluable when it comes to troubleshooting the DOM, so are React’s Developer Tools when it comes to troubleshooting a React app!
+With the Chrome (or Firefox or Edge) extension installed, you will see a **Components** tab in Chrome's DevTools!
 
-With the Chrome (or Firefox, or Edge) extension installed, you will now see a **Components** tab in Chrome’s DevTools!
-
-### Accessing Passed Props
+### Accessing passed props
 
 When React renders a Functional Component, it will always pass in props as the first argument to the function. As a result, we can always access props as a parameter like so:
 
@@ -27,15 +28,15 @@ const ComponentName = (props) => (
   ...
 ```
 
-### Props Cannot be Changed
+### Props cannot be changed
 
-Props are immutable; their values can never to be changed.
+Props are immutable; their values can never be changed.
 
 Remember, the prop came from a component somewhere up the hierarchy, and if the prop's value originated from state, it would be **that** component's responsibility to update its state.
 
-## Working with Props
+## Working with props
 
-Let’s move some of the code we wrote in `Shop.jsx` to a new component. This will help us keep our application organized and make our code more reusable.
+Let's move some of the code we wrote in `Shop.jsx` to a new component. This will help us keep our application organized and make our code more reusable.
 
 Run the following commands in your terminal:
 
@@ -117,6 +118,6 @@ const InventoryList = (props) => {
 export default InventoryList;
 ```
 
-At the moment, there is no way for a user to make changes to the inventory list, as we are rendering a hardcoded array of objects.
+Currently, there is no way for a user to make changes to the inventory list, as we are rendering a hardcoded array of objects.
 
-If we want our component to remember the changes a user makes to the inventory list between renders, we’ll need to use **state**.
+If we want our component to remember the changes a user makes to the inventory list between renders, we'll need to use **state**.
