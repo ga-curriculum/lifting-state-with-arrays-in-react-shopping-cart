@@ -3,35 +3,31 @@
   <span class="subhead">Handling Click Events</span>
 </h1>
 
-**Learning objective:** By the end of this lesson, students will be able to impact state with click event handlers.
+**Learning objective:** By the end of this lesson, students will be able to update component state using click event handlers.
 
 ## Browser events in React
 
-We'll must introduce browser events to our React App to change the inventory state. Like many things in React, event handling is slightly different than what we may be used to with vanilla DOM manipulation.
+To change the `inventory` state in our app, we need to handle browser events. In React, event handling works a little differently from what you may have seen in plain JavaScript.
 
-### Connecting handler code to events in React
+### Connecting event handlers in React
 
-In React, we do not add event listeners using JavaScript's `addEventListener()` method.
+In regular JavaScript, we attach event listeners using `addEventListener()`. In React, we assign event handler functions directly to **event props** on JSX elements (like `<button>`, `<div>`, etc.).
 
-Instead, we assign event-handling functions to specific event props on React Elements (`<div>`, `<p>`, etc.).
+Here are a few important points:
 
-Event observations thus far:
+- Event prop names in React use **camelCase** (`onClick`), not lowercase (`onclick`) like in HTML. You can see [React’s list of supported events here](https://react.dev/reference/react-dom/components/common#react-event-object).
 
-- The names for event props are lowerCamelCased (`onClick`). In HTML, the attribute would be `onclick`. Here's the [list of events](https://react.dev/reference/react-dom/components/common#react-event-object) supported by React.
+- The value inside the event prop must be a **function**, not the result of a function call. This means you use `{handleClick}`, not `{handleClick()}`.
 
-- The JavaScript expression (always within curly braces) assigned to an event prop must evaluate to a function. It may not be a function call (unless that function call returns a function).
-
-- In native JavaScript, if the event handler function returns `false`, that event's default behavior is suppressed. It stops event bubbling (just like calling both the `preventDefault()` and `stopPropagation()` methods). However, in React, we must call the `preventDefault()` method on the React event object object.
+- In regular JavaScript, returning `false` from an event handler can stop an event’s default behavior. In React, we use the `preventDefault()` method on the event object instead.
 
 ## Event Handling
 
-By convention, we'll start the name of event handler methods with the word `handle`, for example, `handleSomeInteraction()`
+By convention, we start event handler function names with the word `handle`. For example: `handleAddItem()`.
 
-In the next step, we'll create a new function called `handleAddItem()`. We also want to add a `<button>` tag with an `onClick` event handler. This will allow us to call upon the `handleAddItem()` function when the user clicks the button.
+We’ll now create a function called `handleAddItem()` and use it with a `<button>` element. When the button is clicked, this function will run and update the `inventory` state.
 
-We'll refactor this later on, but for now, we'll use it to demonstrate how state can be updated.
-
-Make the following changes to `Shop.jsx`:
+Here’s how to set that up in `Shop.jsx`:
 
 ```jsx
 // src/components/Shop/Shop.jsx
@@ -39,12 +35,11 @@ Make the following changes to `Shop.jsx`:
 const Shop = () => {
   const [inventory, setInventory] = useState(inventoryData);
 
-  // Add the following function:
+  // Define the event handler
   const handleAddItem = () => {
     setInventory([]);
   };
 
-  // Add the button:
   return (
     <main>
       <h1>Shop</h1>
@@ -57,21 +52,21 @@ const Shop = () => {
 export default Shop;
 ```
 
-Notice how we set `inventory` state in our `handleAddItem()` function. When this function runs, we call `setInventory()` to set the `inventory` state to an empty array (`[]`). This action replaces the initial state (`inventoryData`) with a brand-new value (`[]`).
+In this example, clicking the button calls `handleAddItem()`, which sets `inventory` to an empty array. You should see the list of items disappear from the page.
 
-Try it out in your browser. You should see the list of items clear out entirely.
+## Updating inventory with new items
 
-You might have noticed an issue here. We have a function called `handleAddItem()`, but at the moment, all this function does is clear the list of items. Let's address that now.
+Right now, the function is called `handleAddItem()`, but it doesn’t actually add anything—it clears the list. Let’s update it to add a new item.
 
-If we look at our initial state of `inventoryData`, we'll see that it is an array of objects. Each object currently held in state should resemble the example below.
+Our initial `inventoryData` is an array of item objects. Each object has this structure:
 
-```jsx
-{ _id: 62345, name: 'Banana', price: .27 }
+```js
+{ _id: 62345, name: 'Banana', price: 0.27 }
 ```
 
-Our goal is to add a new item object like this one to state. The object must contain properties for `_id`, `name`, and `price` in order to work with the rendering we built out earlier.
+To add a new item to the list, we need to create a similar object and update the state.
 
-Let's try it out. Update the `handleAddItem()` function as demonstrated below. Try adding an item.
+Try this version of `handleAddItem()`:
 
 ```jsx
 const handleAddItem = () => {
@@ -79,37 +74,43 @@ const handleAddItem = () => {
 };
 ```
 
-> 😎 You should see an error in the browser console right now!
+> ⚠️ You’ll likely see an error in the console!
 
-Our `InventoryList` component, uses the array's `map()` method on the `inventory` data we passed down as props. This method is only accessible on arrays. In the previous step, we changed the value of the `inventory` state from an array of objects to a single object - hence the error.
+That’s because `InventoryList` uses `.map()` to loop through the `inventory`, which only works if `inventory` is an **array**. By setting `inventory` to a single object, we broke that expectation.
 
-Let's fix this issue next. Update `handleAddItem()` with the following and try it out!
+## Fixing the error
 
-```jsx
-// src/components/Shop/Shop.jsx
+To fix the error, we need to make sure `inventory` is always an **array of objects**.
 
-const handleAddItem = () => {
-  const newItemOne = { _id: 62345, name: 'Banana', price: 0.27 };
-  // Notice how we are placing newItemOne inside an array when setting state!
-  setInventory([newItemOne]);
-};
-```
-
-At this point, clicking on the button should replace the existing list of items with the `newItemOne` object. Our `inventory` state is still an array but only contains a **single object**!
-
-Can we add multiple items to state? Let's try! Update `handleAddItem()` with the following.
+Update `handleAddItem()` like this:
 
 ```jsx
 // src/components/Shop/Shop.jsx
 
 const handleAddItem = () => {
   const newItemOne = { _id: 62345, name: 'Banana', price: 0.27 };
-  const newItemTwo = { _id: 22345, name: 'Avocado', price: 2 };
-  // Sets the inventory state to an array containing two objects
-  setInventory([newItemOne, newItemTwo]);
+  setInventory([newItemOne]); // put the object inside an array
 };
 ```
 
-You should now be able to add these two items to the `inventory` state. So far, we've figured out how to add objects to state, but we're still working with a single inventory.
+Now, clicking the button replaces the inventory list with a single item: the banana. Our state is still an array—it just has one item in it.
 
-In the next section, we'll do a little refactoring so that this UI and functionality mirrors what we have in our mockup.
+## Adding more than one item
+
+What if we want to add multiple items at once?
+
+Try this:
+
+```jsx
+// src/components/Shop/Shop.jsx
+
+const handleAddItem = () => {
+  const newItemOne = { _id: 62345, name: 'Banana', price: 0.27 };
+  const newItemTwo = { _id: 22345, name: 'Avocado', price: 2.0 };
+  setInventory([newItemOne, newItemTwo]); // two objects in the array
+};
+```
+
+This time, clicking the button replaces the current inventory with both items. We’re successfully updating the inventory state using an array of objects.
+
+In the next section, we’ll refactor the code further to match the final design and behavior shown in our mockup.
