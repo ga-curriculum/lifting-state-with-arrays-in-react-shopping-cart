@@ -46,7 +46,7 @@ By the end of this module, students will have created a functional, interactive 
 
 ### Solution code
 
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/lifting-state-with-arrays-in-react-shopping-cart-solution)
+🏁 [Solution code](https://github.com/ga-curriculum/lifting-state-with-arrays-in-react-shopping-cart-solution)
 
 ### Course landing pages
 
